@@ -1,6 +1,9 @@
 import React from "react";
 
 import List from "./components/List";
+import AddList from "./components/AddList";
+
+import DB from "./assets/db.json";
 
 function App() {
     return (
@@ -24,7 +27,6 @@ function App() {
                                 </svg>
                             ),
                             name: "Все задачи",
-                            active: true,
                         },
                     ]}
                 />
@@ -38,21 +40,24 @@ function App() {
                         {
                             color: "blue",
                             name: "Фронтенд",
+                            active: true,
                         },
                         {
                             color: "pink",
                             name: "Фильмы и сериалы",
                         },
-                        {
-                            color: "blue",
-                            name: "Книги",
-                        },
-                        {
-                            color: "gray",
-                            name: "Личное",
-                        },
+                        // {
+                        //     color: "lime",
+                        //     name: "Книги",
+                        // },
+                        // {
+                        //     color: "grey",
+                        //     name: "Личное",
+                        // },
                     ]}
+                    isRemovable
                 />
+                <AddList colors={DB.colors} />
             </div>
             <div className="todo__tasks"></div>
         </div>
