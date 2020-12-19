@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 
 import List from "./components/List";
 import AddList from "./components/AddList";
+import Tasks from "./components/Tasks";
 
 import DB from "./assets/db.json";
 
 function App() {
+    const [lists, setLists] = useState(
+        DB.lists.map((item) => {
+            item.color = DB.colors.filter((color) => color.id === item.colorId)[0].name;
+            return item;
+        })
+    );
+
+    const onAddList = (obj) => {
+        const newLists = [...lists, obj];
+        setLists(newLists);
+    };
+
     return (
         <div className="todo">
             <div className="todo__sidebar">
@@ -26,40 +39,16 @@ function App() {
                                     />
                                 </svg>
                             ),
-                            name: "Все задачи",
+                            name: "All tasks",
                         },
                     ]}
                 />
-                <List
-                    items={[
-                        {
-                            color: "green",
-                            name: "Покупки",
-                        },
-
-                        {
-                            color: "blue",
-                            name: "Фронтенд",
-                            active: true,
-                        },
-                        {
-                            color: "pink",
-                            name: "Фильмы и сериалы",
-                        },
-                        // {
-                        //     color: "lime",
-                        //     name: "Книги",
-                        // },
-                        // {
-                        //     color: "grey",
-                        //     name: "Личное",
-                        // },
-                    ]}
-                    isRemovable
-                />
-                <AddList colors={DB.colors} />
+                <List items={lists} onRemove={(item) => console.log(item)} isRemovable />
+                <AddList onAddList={onAddList} colors={DB.colors} />
             </div>
-            <div className="todo__tasks"></div>
+            <div className="todo__tasks">
+                <Tasks />
+            </div>
         </div>
     );
 }
