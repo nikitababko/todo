@@ -38,12 +38,11 @@ const AddList = ({ colors, onAddList }) => {
                 colorId: selectedColor,
             })
             .then(({ data }) => {
-                const color = colors.filter((c) => c.id === selectedColor)[0].name;
+                const color = colors.filter((c) => c.id === selectedColor)[0];
                 const listObj = {
                     ...data,
-                    color: {
-                        name: color,
-                    },
+                    color,
+                    tasks: [],
                 };
                 onAddList(listObj);
                 onClose();

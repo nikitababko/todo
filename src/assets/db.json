@@ -19,16 +19,6 @@
       "id": 4,
       "name": "Книги",
       "colorId": 2
-    },
-    {
-      "id": 5,
-      "name": "Личное",
-      "colorId": 1
-    },
-    {
-      "name": "Sport",
-      "colorId": 3,
-      "id": 6
     }
   ],
   "tasks": [
@@ -36,7 +26,7 @@
       "id": 1,
       "listId": 2,
       "text": "Изучить JavaScript",
-      "completed": false
+      "completed": true
     },
     {
       "id": 2,
@@ -48,19 +38,13 @@
       "id": 3,
       "listId": 2,
       "text": "ReactJS Hooks (useState, useReducer, useEffect и т.д.)",
-      "completed": true
+      "completed": false
     },
     {
       "id": 4,
       "listId": 2,
       "text": "Redux (redux-observable, redux-saga)",
-      "completed": false
-    },
-    {
-      "listId": 2,
-      "text": "123",
-      "completed": true,
-      "id": 5
+      "completed": true
     },
     {
       "listId": 1,
@@ -93,24 +77,6 @@
       "id": 10
     },
     {
-      "listId": 2,
-      "text": "222",
-      "completed": true,
-      "id": 12
-    },
-    {
-      "listId": 2,
-      "text": "qwe",
-      "completed": false,
-      "id": 13
-    },
-    {
-      "listId": 2,
-      "text": "qwe",
-      "completed": false,
-      "id": 14
-    },
-    {
       "listId": 1,
       "text": "qwe",
       "completed": false,
@@ -121,6 +87,12 @@
       "text": "qwe",
       "completed": false,
       "id": 16
+    },
+    {
+      "listId": 1,
+      "text": "qwe",
+      "completed": false,
+      "id": 17
     }
   ],
   "colors": [
