@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
 import List from "components/List";
@@ -13,6 +13,9 @@ const AddList = ({ colors, onAddList }) => {
     const [selectedColor, setSelectedColor] = useState(3);
     const [isLoading, setIsLoading] = useState(false);
     const [inputValue, setInputValue] = useState("");
+
+    const ref = useRef();
+    useOnClickOutside(ref, () => onClose());
 
     useEffect(() => {
         if (Array.isArray(colors)) {
@@ -55,6 +58,12 @@ const AddList = ({ colors, onAddList }) => {
             });
     };
 
+    const handleKeyPress = (event) => {
+        if (event.key === "Enter") {
+            addList();
+        }
+    };
+
     return (
         <div className="add-list">
             <List
@@ -91,7 +100,7 @@ const AddList = ({ colors, onAddList }) => {
                 ]}
             />
             {visiblePopup && (
-                <div className="add-list__popup">
+                <div ref={ref} className="add-list__popup">
                     <img
                         onClick={onClose}
                         src={closeSvg}
@@ -101,6 +110,7 @@ const AddList = ({ colors, onAddList }) => {
                     <input
                         value={inputValue}
                         onChange={(e) => setInputValue(e.target.value)}
+                        onKeyDown={handleKeyPress}
                         className="field"
                         type="text"
                         placeholder="List name"
@@ -122,6 +132,26 @@ const AddList = ({ colors, onAddList }) => {
             )}
         </div>
     );
+};
+
+const useOnClickOutside = (ref, handler) => {
+    useEffect(() => {
+        const listener = (event) => {
+            if (!ref.current || ref.current.contains(event.target)) {
+                return;
+            }
+
+            handler(event);
+        };
+
+        document.addEventListener("mousedown", listener);
+        document.addEventListener("touchstart", listener);
+
+        return () => {
+            document.removeEventListener("mousedown", listener);
+            document.removeEventListener("touchstart", listener);
+        };
+    }, [ref, handler]);
 };
 
 export default AddList;

@@ -34,6 +34,12 @@ const AddTaskForm = ({ list, onAddTask }) => {
             });
     };
 
+    const handleKeyPress = (event) => {
+        if (event.key === "Enter") {
+            addTask();
+        }
+    };
+
     return (
         <div className="tasks__form">
             {!visibleForm ? (
@@ -44,6 +50,7 @@ const AddTaskForm = ({ list, onAddTask }) => {
             ) : (
                 <div className="tasks__form-block">
                     <input
+                        onKeyDown={handleKeyPress}
                         value={inputValue}
                         className="field"
                         type="text"

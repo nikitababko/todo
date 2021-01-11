@@ -19,6 +19,16 @@
       "name": "Лайф",
       "colorId": 8,
       "id": 5
+    },
+    {
+      "name": "asdasd",
+      "colorId": 3,
+      "id": 6
+    },
+    {
+      "name": "asd",
+      "colorId": 1,
+      "id": 7
     }
   ],
   "tasks": [
@@ -73,7 +83,7 @@
     {
       "listId": 1,
       "text": "Масло",
-      "completed": false,
+      "completed": true,
       "id": 19
     },
     {
@@ -85,8 +95,20 @@
     {
       "listId": 5,
       "text": "asd",
-      "completed": false,
+      "completed": true,
       "id": 21
+    },
+    {
+      "listId": 1,
+      "text": "asd",
+      "completed": false,
+      "id": 22
+    },
+    {
+      "listId": 1,
+      "text": "hgkasd",
+      "completed": false,
+      "id": 23
     }
   ],
   "colors": [
