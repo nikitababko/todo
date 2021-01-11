@@ -31,8 +31,10 @@ const Task = ({ id, text, completed, list, onRemove, onEdit, onComplete }) => {
                         />
                     </svg>
                 </label>
+                <p>{text}</p>
+                {/* <input type="text" value={text} /> */}
             </div>
-            <p>{text}</p>
+            {/* <p>{text}</p> */}
             <div className="tasks__items-row-actions">
                 <div onClick={() => onEdit(list.id, { id, text })}>
                     <svg

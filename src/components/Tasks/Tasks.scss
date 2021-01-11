@@ -123,15 +123,32 @@
             }
 
             p {
+                position: relative;
                 width: 100%;
                 margin-left: 15px;
                 border: 0;
                 font-size: 16px;
+
+                &::after {
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    content: "";
+                    display: block;
+                    width: 0%;
+                    height: 1px;
+                    background-color: #000;
+                    transition: width 0.4s ease-in-out;
+                }
             }
         }
     }
 
     .checkbox {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
         input {
             display: none;
         }
@@ -155,6 +172,10 @@
             }
         }
 
+        input:checked + label + p::after {
+            width: 100%;
+        }
+
         &:hover {
             label {
                 background-color: #f2f2f2;
@@ -174,6 +195,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex: 0 0 auto;
             border: 2px solid #e8e8e8;
             border-radius: 50%;
             width: 20px;
