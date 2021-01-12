@@ -29,6 +29,16 @@
       "name": "asd",
       "colorId": 1,
       "id": 7
+    },
+    {
+      "name": "asdsadas",
+      "colorId": 1,
+      "id": 8
+    },
+    {
+      "name": "test",
+      "colorId": 6,
+      "id": 9
     }
   ],
   "tasks": [
@@ -47,7 +57,7 @@
     {
       "listId": 1,
       "text": "qweqwe",
-      "completed": true,
+      "completed": false,
       "id": 8
     },
     {

@@ -127,7 +127,13 @@ const AddList = ({ colors, onAddList }) => {
                         ))}
                     </div>
                     <button onClick={addList} className="button">
-                        {isLoading ? "Adding..." : "Add"}
+                        {isLoading ? (
+                            <p>
+                                <i class="fa fa-circle-o-notch fa-spin"></i> Adding...
+                            </p>
+                        ) : (
+                            "Add"
+                        )}
                     </button>
                 </div>
             )}

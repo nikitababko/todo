@@ -153,7 +153,9 @@ function App() {
                         isRemovable
                     />
                 ) : (
-                    "Downloading..."
+                    <p>
+                        <i class="fa fa-spinner fa-spin"></i> Downloading...
+                    </p>
                 )}
                 <AddList onAddList={onAddList} colors={colors} />
             </div>
