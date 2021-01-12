@@ -29,11 +29,6 @@
       "name": "asd",
       "colorId": 1,
       "id": 7
-    },
-    {
-      "name": "asdasd",
-      "colorId": 1,
-      "id": 8
     }
   ],
   "tasks": [
@@ -100,7 +95,7 @@
     {
       "listId": 5,
       "text": "asd",
-      "completed": false,
+      "completed": true,
       "id": 21
     },
     {
