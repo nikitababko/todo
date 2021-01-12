@@ -35,13 +35,13 @@
     {
       "listId": 1,
       "text": "test",
-      "completed": false,
+      "completed": true,
       "id": 6
     },
     {
       "listId": 1,
       "text": "qweqwe",
-      "completed": false,
+      "completed": true,
       "id": 7
     },
     {
@@ -65,13 +65,13 @@
     {
       "listId": 1,
       "text": "qwe",
-      "completed": true,
+      "completed": false,
       "id": 15
     },
     {
       "listId": 1,
       "text": "qwe",
-      "completed": true,
+      "completed": false,
       "id": 16
     },
     {
@@ -83,13 +83,13 @@
     {
       "listId": 1,
       "text": "Масло",
-      "completed": true,
+      "completed": false,
       "id": 19
     },
     {
       "listId": 5,
       "text": "Погулять",
-      "completed": false,
+      "completed": true,
       "id": 20
     },
     {
@@ -107,8 +107,14 @@
     {
       "listId": 1,
       "text": "hgkasd",
-      "completed": false,
+      "completed": true,
       "id": 23
+    },
+    {
+      "listId": 7,
+      "text": "asdasd",
+      "completed": false,
+      "id": 24
     }
   ],
   "colors": [

@@ -3,6 +3,7 @@ import axios from "axios";
 
 import List from "components/List";
 import Badge from "components/Badge";
+import useOnClickOutside from "utils/useOnClickOutside";
 
 import closeSvg from "assets/img/close.svg";
 
@@ -132,26 +133,6 @@ const AddList = ({ colors, onAddList }) => {
             )}
         </div>
     );
-};
-
-const useOnClickOutside = (ref, handler) => {
-    useEffect(() => {
-        const listener = (event) => {
-            if (!ref.current || ref.current.contains(event.target)) {
-                return;
-            }
-
-            handler(event);
-        };
-
-        document.addEventListener("mousedown", listener);
-        document.addEventListener("touchstart", listener);
-
-        return () => {
-            document.removeEventListener("mousedown", listener);
-            document.removeEventListener("touchstart", listener);
-        };
-    }, [ref, handler]);
 };
 
 export default AddList;
