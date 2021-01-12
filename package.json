@@ -20,7 +20,8 @@
     "scripts": {
         "start": "concurrently \"npm run client\" \"npm run server\"",
         "client": "react-scripts start",
-        "server": "json-server ./src/assets/db.json --watch --port 3001",
+        "server": "node server.js",
+        "json-server": "json-server --watch public/db.json --port=3001",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
