@@ -71,7 +71,9 @@ function App() {
     });
     setLists(newList);
     axios
-      .patch('http://localhost:3001/tasks/' + taskObj.id, { text: newTaskText })
+      .patch('http://localhost:3001/tasks/' + taskObj.id, {
+        text: newTaskText,
+      })
       .catch(() => {
         alert('Failed to edit task!');
       });
@@ -90,9 +92,11 @@ function App() {
       return list;
     });
     setLists(newList);
-    axios.patch('http://localhost:3001/tasks/' + taskId, { completed }).catch(() => {
-      alert('Failed to edit task!');
-    });
+    axios
+      .patch('http://localhost:3001/tasks/' + taskId, { completed })
+      .catch(() => {
+        alert('Failed to edit task!');
+      });
   };
 
   const onEditListTitle = (id, title) => {
